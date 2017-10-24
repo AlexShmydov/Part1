@@ -5,7 +5,8 @@ public enum Parameters {
     SECOND_NAME("Shmydov"),
     DEFAULT_SYMBOL("*"),
     DEFAULT_EXPRESSION("[\\\\a-zA-Zа-яА-Я.]"),
-    ALREADY_EXIST("EXIST");
+    ALREADY_EXIST("EXIST"),
+    DEFAULT_PATTER_IGNORE_CASE("(?i:.*%s.*)");
 
     private final String VALUE;
 
