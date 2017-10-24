@@ -7,6 +7,7 @@ public class Main {
     private static int DEFAULT_PLACE = 2;
 
     public static void main(String[] args) {
+        System.out.println(Texts.WELCOME_MSG.getValue());
         /*Create instance of tournament and override by input data*/
         TournamentProcessor tournamentProcessor = new TournamentProcessor(NAMES,TIME);
         /*Call method to print all information about results*/
