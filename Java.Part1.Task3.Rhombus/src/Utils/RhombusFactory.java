@@ -11,15 +11,11 @@ public class RhombusFactory {
 
         for (int i = 0; i < rowLength; i++) {
             char[] row = generateCharArray(rowLength, Settings.DEFAULT_SYMBOL.getValue());
-            if (i == rowLength - 1 || i == 0) {
-                row[length - 1] = Settings.RHOMBUS_SYMBOL.getValue();
-            } else {
-                if (cursor - i < 0) {
-                    counter++;
-                }
-                row[cursor - i + counter * 2] = Settings.RHOMBUS_SYMBOL.getValue();
-                row[cursor + i - counter * 2] = Settings.RHOMBUS_SYMBOL.getValue();
+            if (cursor - i < 0) {
+                counter++;
             }
+            row[cursor - i + counter * 2] = Settings.RHOMBUS_SYMBOL.getValue();
+            row[cursor + i - counter * 2] = Settings.RHOMBUS_SYMBOL.getValue();
             printRow(row);
         }
     }
