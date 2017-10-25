@@ -30,7 +30,7 @@ public class Processor {
         do {
             String inputData = scanner.nextLine().trim();
             /**Check that putted value is correct (i.e. putted value is a string).
-             if Spaces are puts with letter it will be ignored.*/
+             if Spaces were putted with letters it will be ignored.*/
             if (inputData.replaceAll(Parameters.DEFAULT_EXPRESSION.getValue(), "").trim().length() == 0) {
                 if (    //Check is it a letter
                         inputData.length() == 1
