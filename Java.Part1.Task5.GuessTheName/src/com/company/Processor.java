@@ -32,8 +32,9 @@ public class Processor {
             /**Check that putted value is correct (i.e. putted value is a string).
              if Spaces are puts with letter it will be ignored.*/
             if (inputData.replaceAll(Parameters.DEFAULT_EXPRESSION.getValue(), "").trim().length() == 0) {
-                if (inputData.length() == 1 || (inputData.split(" ").length < 2 //Check is it a letter or user putted no more two words
-                        && (inputData.length() == word.split(" ")[0].length() || inputData.length() == word.split(" ")[1].length())) //Check if user putted some word and this value has length like hidden words
+                if (inputData.length() == 1
+                        //Check is it a letter or user putted no more two words OR сheck if user putted some word and this value has length like hidden words
+                        || (inputData.split(" ").length < 2 && (inputData.length() == word.split(" ")[0].length() || inputData.length() == word.split(" ")[1].length()))
                         || (inputData.split(" ").length == 2 && inputData.length() == word.length())) { //Check if user putted two words this words have to have length equals full hidden words
                     String result = replaceSymbolsOnLetters(inputData);
                     if (result != null) {
