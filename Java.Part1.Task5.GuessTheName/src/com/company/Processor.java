@@ -32,10 +32,13 @@ public class Processor {
             /**Check that putted value is correct (i.e. putted value is a string).
              if Spaces are puts with letter it will be ignored.*/
             if (inputData.replaceAll(Parameters.DEFAULT_EXPRESSION.getValue(), "").trim().length() == 0) {
-                if (inputData.length() == 1
-                        //Check is it a letter or user putted no more two words OR сheck if user putted some word and this value has length like hidden words
+                if (    //Check is it a letter
+                        inputData.length() == 1
+                        // OR check if user putted less than two words and this value has length like one of hidden words
                         || (inputData.split(" ").length < 2 && (inputData.length() == word.split(" ")[0].length() || inputData.length() == word.split(" ")[1].length()))
-                        || (inputData.split(" ").length == 2 && inputData.length() == word.length())) { //Check if user putted two words this words have to have length equals full hidden words
+                        // OR Check if user putted two words this words have to have length equals full hidden words
+                        || (inputData.split(" ").length == 2 && inputData.length() == word.length())) {
+
                     String result = replaceSymbolsOnLetters(inputData);
                     if (result != null) {
                         if (getCountOfLostLettersInHiddenWord() == 0) {//check that the hiddenword don't have symbols. If that - user wins
